@@ -1,6 +1,0 @@
-node_modules
-.DS_Store
-*.local
-*.css.d.ts
-.tmp
-build
