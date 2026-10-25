@@ -1,6 +1,7 @@
 {
   "name": "linear-easing-generator",
   "version": "1.0.0",
+  "homepage": ".",
   "scripts": {
     "build": "node --experimental-import-meta-resolve node_modules/.bin/rollup -c && node lib/move-output.mjs",
     "debug": "node --experimental-import-meta-resolve --inspect-brk node_modules/.bin/rollup -c",
