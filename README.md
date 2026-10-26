@@ -44,7 +44,4 @@ run it how it says to run it in the original website, but after it builds, edit 
 I DID NOT MAKE THIS! I SIMPLY CLONED IT SO THAT I COULD ACCESS IT FROM SCHOOL, SINCE IT DOESN'T LET ME ACCESS IT HERE!
 [THIS IS THE LINK TO ORIGINAL GITHUB REPO](https://github.com/jakearchibald/linear-easing-generator)
 [THIS IS THE LINK TO THE ORIGINAL WEBSITE](https://linear-easing-generator.netlify.app)
-
-`
-[THIS IS HOW I GOT ACCESS TO IT IN SCHOOL](https://saveweb2zip.com/en)
-`
+<!-- [THIS IS HOW I GOT ACCESS TO IT IN SCHOOL](https://saveweb2zip.com/en) -->
