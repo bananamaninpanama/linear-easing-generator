@@ -1,3 +1,9 @@
+this branch was originally 'main', and i was using this because i thought that Netfly was compiling it differently than me, but i was just being dumb, and didnt check the html on WHY it was breaking(The path to the process-scripts html was absolute instead of relative)
+here's the original 'about' this repo had:
+`
+test2 gonna use Netfly to see if that can compile it correctly
+`
+
 # [linear() easing generator](https://linear-easing-generator.netlify.app/)
 
 For a long time, easing on the web was limited to `cubic-bezier`, meaning you couldn't do easings like bounce, spring, or elastic without JavaScript. But now `linear()` is here! Well, [almost here](https://caniuse.com/mdn-css_types_easing-function_linear-function).
