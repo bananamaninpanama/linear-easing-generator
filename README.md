@@ -1,3 +1,7 @@
+the difference between this branch, and normal main, is that this branch has a manifest.json so that you can install the website
+i am excluding it by default because the website can store information in the url, so if i set it as blank so it installs it from the current webpage, it would be different from the default page, by default, and i cant set it to '/'(the root) because the root would then be 'bananamaninpanama.github.io' which is definitely not what i want.
+but i am including it here in case someone wants to fork it so they can have it as a web app or something
+
 # [linear() easing generator](https://bananamaninpanama.github.io/linear-easing-generator/)
 
 For a long time, easing on the web was limited to `cubic-bezier`, meaning you couldn't do easings like bounce, spring, or elastic without JavaScript. But now `linear()` is here! Well, [almost here](https://caniuse.com/mdn-css_types_easing-function_linear-function).
