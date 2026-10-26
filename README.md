@@ -45,3 +45,4 @@ I DID NOT MAKE THIS! I SIMPLY CLONED IT SO THAT I COULD ACCESS IT FROM SCHOOL, S
 [THIS IS THE LINK TO ORIGINAL GITHUB REPO](https://github.com/jakearchibald/linear-easing-generator)
 [THIS IS THE LINK TO THE ORIGINAL WEBSITE](https://linear-easing-generator.netlify.app)
 <!-- [THIS IS HOW I GOT ACCESS TO IT IN SCHOOL](https://saveweb2zip.com/en) -->
+<!-- the thing above was commented out because i didn't use that for this. I built and used the thing it gave me -->
