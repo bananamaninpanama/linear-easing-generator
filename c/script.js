@@ -2,36 +2,7 @@
     THE ORIGINAL SOURCE IS FROM:
     https://github.com/jakearchibald/linear-easing-generator
 */
-/*function setmanifest(manifestjson) {
-    document.getElementById("manifest-link").setAttribute("href", "data:application/manifest+json;charset=utf-8," + encodeURIComponent(JSON.stringify(manifestjson)));
-}
-setmanifest({
-    "name": "linear() easing generator",
-    "short_name": "linear()",
-    "start_url": "/",
-    "display": "standalone",
-    "orientation": "any",
-    "background_color": "#fff",
-    "theme_color": "#009dff",
-    "icons": [{
-            "src": "/c/maskable-icon.png",
-            "type": "image/png",
-            "sizes": "1075x1075",
-            "purpose": "maskable"
-        },
-        {
-            "src": "/c/social-icon.png",
-            "type": "image/png",
-            "sizes": "804x804"
-        }
-    ],
-    "description": "Generate linear() easings from JavaScript and SVG",
-    "lang": "en"
-});
 
-
-
-*/
 var t, e, i, n, r, s, o = {},
     l = [],
     a = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
