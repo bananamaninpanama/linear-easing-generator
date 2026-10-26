@@ -25,12 +25,15 @@
 }
 
 ._process-scripts-iframe_1s7gt_21 {
+    /*
     height: 0;
     left: 0;
     opacity: 0;
     position: absolute;
     top: -1000px;
     width: 0
+    */
+    display: none;
 }
 
 ._section-header_1s7gt_30 {
