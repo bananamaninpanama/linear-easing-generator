@@ -535,7 +535,7 @@ a:hover {
 
 ._error_6pnp9_18:before {
     --size: 15px;
-    content: url(/c/error.svg);
+    content: url(./c/error.svg);
     height: var(--size);
     margin-top: 1px;
     width: var(--size)
