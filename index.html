@@ -119,6 +119,36 @@
             </div>
         </div>
     </div>
+    <script>
+const SVGPATHS_class = "PATH"
+
+function isValidSVGPath(pathString) {
+  if (!pathString || typeof pathString !== 'string') {
+    return false
+  }
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', pathString);
+  const normalizedPath = path.getAttribute('d');
+  if (!normalizedPath) {
+    return false;
+  }
+  return /^[Mm]/.test(normalizedPath.trim());
+}
+
+function SETVALUES() {
+  document.querySelectorAll(`path.${SVGPATHS_class}`)
+    .forEach(pathElem => {
+        const PathVar = SVGPATHS[pathElem.id]
+        if (isValidSVGPath(PathVar)) {
+          pathElem.setAttribute('d', PathVar);
+        } else {
+          //pathElem.setAttribute('d', PathVar)
+            //i dont know why i set it to this originally
+            //if it didnt work, it would probably break or something
+        }
+    });
+}
+    </script>
 </body>
 
 </html>
