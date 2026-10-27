@@ -15784,7 +15784,7 @@ const zd = ({
             }
         }, O("span", {
             class: ud
-        }, "Copy"), O("svg", {
+        }, "Copy"), O("object", {
             type: "image/svg+xml",
             data: "./c/ARROW.svg"
         }))
