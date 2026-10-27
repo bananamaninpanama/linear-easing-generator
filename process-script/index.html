@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <script>
-    self.nextDefineUri = /*location.origin +*/ "./frame.js";
+    //self.nextDefineUri = /*location.origin +*/ "./frame.js"; wait does this just straight up not do anything???????
     const t = (async () => {
         const t = await fetch("./process-script.js"),
             e = await t.text();
@@ -39,5 +39,5 @@
                 e = null, (await t).terminate()
             }()
     };
-    self.nextDefineUri = ""
+    //self.nextDefineUri = ""
 </script>
