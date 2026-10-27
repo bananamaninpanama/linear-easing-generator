@@ -10,6 +10,7 @@ const SVGPATHS = {
   PLAY: "M320 853V293l440 280-440 280Zm60-280Zm0 171 269-171-269-171v342Z",
   GITHUB: "M48.85 0C21.84 0 0 22 0 49.22 0 70.97 14 89.39 33.4 95.9c2.43.49 3.32-1.06 3.32-2.37 0-1.14-.08-5.05-.08-9.12-13.59 2.93-16.42-5.87-16.42-5.87-2.18-5.7-5.42-7.17-5.42-7.17-4.45-3.01.33-3.01.33-3.01 4.93.32 7.52 5.05 7.52 5.05 4.37 7.5 11.4 5.38 14.23 4.07.4-3.18 1.7-5.38 3.08-6.6-10.84-1.14-22.25-5.38-22.25-24.28 0-5.38 1.94-9.78 5.02-13.2-.49-1.22-2.19-6.28.48-13.04 0 0 4.13-1.3 13.43 5.05a46.97 46.97 0 0 1 12.21-1.63 47 47 0 0 1 12.22 1.63c9.3-6.35 13.42-5.05 13.42-5.05 2.67 6.76.97 11.82.49 13.04a18.9 18.9 0 0 1 5.01 13.2c0 18.9-11.4 23.06-22.32 24.28 1.78 1.55 3.32 4.48 3.32 9.13 0 6.6-.08 11.9-.08 13.52 0 1.3.89 2.86 3.31 2.37a49.18 49.18 0 0 0 33.4-46.7C97.72 22 75.8 0 48.86 0z"
 }
+const SVGPATHS_class = "PATH"
 
 function isValidSVGPath(pathString) {
   if (!pathString || typeof pathString !== 'string') {
@@ -25,16 +26,16 @@ function isValidSVGPath(pathString) {
 }
 
 function SETVALUES() {
-  document.querySelectorAll('path')
+  document.querySelectorAll(`path.${SVGPATHS_class}`)
     .forEach(pathElem => {
-      if (pathElem.id.startsWith('PATH_')) {
-        const PathVar = SVGPATHS[pathElem.id.replace('PATH_', '')]
+        const PathVar = SVGPATHS[pathElem.id]
         if (isValidSVGPath(PathVar)) {
           pathElem.setAttribute('d', PathVar);
         } else {
-          pathElem.setAttribute('d', PathVar)
+          //pathElem.setAttribute('d', PathVar)
+            //i dont know why i set it to this originally
+            //if it didnt work, it would probably break or something
         }
-      }
     });
 }
 
@@ -6639,7 +6640,7 @@ const Ks = Js("." + Bs, {
         color: "#888"
     },
     ".cm-highlightTab": {
-        backgroundImage: 'url(\'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" id="PATH_ODD"/></svg>\')',
+        backgroundImage: 'url(\'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" class="' + SVGPATHS_class + '" id="ODD"/></svg>\')',
         backgroundSize: "auto 100%",
         backgroundPosition: "right 90%",
         backgroundRepeat: "no-repeat"
@@ -15821,7 +15822,8 @@ const zd = ({
         }, "Copy"), O("svg", {
             viewBox: "0 96 960 960"
         }, O("path", {
-            id: "PATH_COPY",
+            id: "COPY",
+            class: SVGPATHS_class
         })))
     },
     Gd = ({
@@ -15844,7 +15846,8 @@ const zd = ({
         }, O("span", null, r), O("svg", {
             viewBox: "0 0 8.65 3.02"
         }, O("path", {
-            id: "PATH_ARROW",
+            id: "ARROW",
+            class: SVGPATHS_class
         }))), O("select", {
             class: "_real-select_ss74s_22",
             ref: s,
@@ -15943,7 +15946,8 @@ const Nd = ({
             xmlns: "http://www.w3.org/2000/svg",
             viewBox: "0 0 98 96"
         }, O("path", {
-            id: "PATH_GITHUB",
+            id: "GITHUB",
+            class: SVGPATHS_class
         }))))
     },
     Fd = matchMedia("(prefers-reduced-motion: no-preference)").matches;
@@ -15998,7 +16002,7 @@ const Nd = ({
         Q = Vd(g, c, u),
         S = Xd(Zd(a, Zt(1e-5), Zt(5)), Zt(5)),
         v = Xt((() => s.value ? "Pause" : "Play")),
-        y = Xt((() => s.value ? "PATH_PAUSE" : "PATH_PLAY"));
+        y = Xt((() => s.value ? "PAUSE" : "PLAY"));
     return O(f, null, O(Hd, {
         onPresetSelect: t => r(t)
     }), O("div", {
@@ -16050,6 +16054,7 @@ const Nd = ({
         viewBox: "0 96 960 960"
     }, O("path", {
         id: y,
+        class: SVGPATHS_class
     })))), O("div", {
         class: "_preview-content_1s7gt_103"
     }, O(md, {
