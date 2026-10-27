@@ -224,6 +224,8 @@ function Z(e, i, n, r, s, l, a, h) {
                 break
             } if (null == e) {
         if (null === m) return document.createTextNode(g);
+        /* why the frick did it have to minimize this code TvT */
+        /* i am so confused as to what this is... */
         e = s ? document.createElementNS("http://www.w3.org/2000/svg", m) : document.createElement(m, g.is && g), l = null, h = !1
     }
     if (null === m) d === g || h && e.data === g || (e.data = g);
@@ -6603,6 +6605,7 @@ const Ks = Js("." + Bs, {
     },
     ".cm-highlightTab": {
         backgroundImage: 'url(\'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" d="M1 10H196L190 5M190 15L196 10M197 4L197 16"/></svg>\')',
+        /* what the heck even is this???                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^            */
         backgroundSize: "auto 100%",
         backgroundPosition: "right 90%",
         backgroundRepeat: "no-repeat"
@@ -15782,10 +15785,9 @@ const zd = ({
         }, O("span", {
             class: ud
         }, "Copy"), O("svg", {
-            viewBox: "0 96 960 960"
-        }, O("path", {
-            d: "M180 975q-24 0-42-18t-18-42V312h60v603h474v60H180Zm120-120q-24 0-42-18t-18-42V235q0-24 18-42t42-18h440q24 0 42 18t18 42v560q0 24-18 42t-42 18H300Zm0-60h440V235H300v560Zm0 0V235v560Z"
-        })))
+            type: "image/svg+xml",
+            data: "./c/ARROW.svg"
+        }))
     },
     Gd = ({
         value: t,
@@ -15804,7 +15806,7 @@ const zd = ({
         }, O("div", {
             class: "_select-current_ss74s_6",
             "aria-hidden": "true"
-        }, O("span", null, r), O("svg", {
+        }, O("span", null, r), O("object", {
             viewBox: "0 0 8.65 3.02"
         }, O("path", {
             d: "M8.57.33 4.54 2.96a.42.42 0 0 1-.43 0L.08.33a.15.15 0 0 1 0-.27.43.43 0 0 1 .43 0l3.82 2.48L8.14.05a.43.43 0 0 1 .42 0 .15.15 0 0 1 0 .28Z"
@@ -15902,12 +15904,10 @@ const Nd = ({
             target: "_blank"
         }, O("span", {
             class: ud
-        }, "GitHub repository"), O("svg", {
-            xmlns: "http://www.w3.org/2000/svg",
-            viewBox: "0 0 98 96"
-        }, O("path", {
-            d: "M48.85 0C21.84 0 0 22 0 49.22 0 70.97 14 89.39 33.4 95.9c2.43.49 3.32-1.06 3.32-2.37 0-1.14-.08-5.05-.08-9.12-13.59 2.93-16.42-5.87-16.42-5.87-2.18-5.7-5.42-7.17-5.42-7.17-4.45-3.01.33-3.01.33-3.01 4.93.32 7.52 5.05 7.52 5.05 4.37 7.5 11.4 5.38 14.23 4.07.4-3.18 1.7-5.38 3.08-6.6-10.84-1.14-22.25-5.38-22.25-24.28 0-5.38 1.94-9.78 5.02-13.2-.49-1.22-2.19-6.28.48-13.04 0 0 4.13-1.3 13.43 5.05a46.97 46.97 0 0 1 12.21-1.63 47 47 0 0 1 12.22 1.63c9.3-6.35 13.42-5.05 13.42-5.05 2.67 6.76.97 11.82.49 13.04a18.9 18.9 0 0 1 5.01 13.2c0 18.9-11.4 23.06-22.32 24.28 1.78 1.55 3.32 4.48 3.32 9.13 0 6.6-.08 11.9-.08 13.52 0 1.3.89 2.86 3.31 2.37a49.18 49.18 0 0 0 33.4-46.7C97.72 22 75.8 0 48.86 0z"
-        }))))
+        }, "GitHub repository"), O("object", {
+            type: "image/svg+xml",
+            data: "./c/GITHUB.svg"
+        })))
     },
     Fd = matchMedia("(prefers-reduced-motion: no-preference)").matches;
 ! function(i, n, r) {
@@ -15961,7 +15961,7 @@ const Nd = ({
         Q = Vd(g, c, u),
         S = Xd(Zd(a, Zt(1e-5), Zt(5)), Zt(5)),
         v = Xt((() => s.value ? "Pause" : "Play")),
-        y = Xt((() => s.value ? "M525 856V296h235v560H525Zm-325 0V296h235v560H200Zm385-60h115V356H585v440Zm-325 0h115V356H260v440Zm0-440v440-440Zm325 0v440-440Z" : "M320 853V293l440 280-440 280Zm60-280Zm0 171 269-171-269-171v342Z"));
+        y = Xt((() => s.value ? "./c/PAUSE.svg" : "./c/PLAY.svg"));
     return O(f, null, O(Hd, {
         onPresetSelect: t => r(t)
     }), O("div", {
@@ -16009,11 +16009,10 @@ const Nd = ({
         onClick: () => s.value = !s.value
     }, O("span", {
         class: ud
-    }, v), O("svg", {
-        viewBox: "0 96 960 960"
-    }, O("path", {
-        d: y
-    })))), O("div", {
+    }, v), O("object", {
+        type: "image/svg+xml",
+        data: y
+    }))), O("div", {
         class: "_preview-content_1s7gt_103"
     }, O(md, {
         fullPoints: p,
