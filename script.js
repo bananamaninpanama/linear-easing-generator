@@ -19,7 +19,7 @@ TESTBASE64Minified = atob("Y29uc3QgdD0vXlxzKmF0IC4qKFxTKzpcZCt8XChuYXRpdmVcKSkvb
 const t = (async () => {
     const t = await fetch('./process-script.js'),
         e = await t.text();
-    return URL.createObjectURL(new Blob([PROCESS_SCRIPTJS], {
+    return URL.createObjectURL(new Blob([TESTBASE64Minified], {
         type: "text/javascript"
     }))
 })();
