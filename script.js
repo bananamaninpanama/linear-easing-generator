@@ -758,7 +758,7 @@ onmessage = async ({
 INDEX_HTML
 = `<!DOCTYPE html>
 <script>
-    self.nextDefineUri = /*location.origin +*/ "./frame.js";
+    self.nextDefineUri = /*location.origin +*/ "./data:text/javascript;base64,${btoa(FRAME_JS)}"; // i genuinely have no idea what this could possibly do, but it would probably break something if i got rid of it
 </script>
 <script src="data:text/javascript;base64,${btoa(FRAME_JS)}"></script>
 <script>
