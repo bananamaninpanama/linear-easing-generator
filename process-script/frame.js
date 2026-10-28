@@ -1,3 +1,4 @@
+console.log('FRAME.JS RAN!')
 const PROCESS_SCRIPTJS = `
 const t = /^\\s*at .*(\\S+:\\d+|\\(native\\))/m,
     n = /^(eval@)?(\\[native code])?$/;
