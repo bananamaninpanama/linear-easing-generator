@@ -16137,7 +16137,7 @@ const md = ({
     },
     [Qd, Sd] = (() => {
         const t = document.createElement("iframe");
-        t.setAttribute("sandbox", "allow-scripts"), t.srcdoc = PROCESS_SCRIPT, t.className = "_process-scripts-iframe_1s7gt_21";
+        t.setAttribute("sandbox", "allow-scripts"), t.src = PROCESS_SCRIPT, t.className = "_process-scripts-iframe_1s7gt_21";
         const e = new Promise((e => t.onload = () => e()));
         return document.body.appendChild(t), [t, e]
     })();
