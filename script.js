@@ -761,7 +761,8 @@ INDEX_HTML = `<!DOCTYPE html>
     self.nextDefineUri = ""
 </script>`
 
-const PROCESS_SCRIPT = 'data:text/html;base64,' + btoa(htmlString);
+const PROCESS_SCRIPT = 'data:text/html;base64,' + btoa(INDEX_HTML);
+
 var t, e, i, n, r, s, o = {},
     l = [],
     a = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
