@@ -2,6 +2,55 @@
     THE ORIGINAL SOURCE IS FROM:
     https://github.com/jakearchibald/linear-easing-generator
 */
+function jsorhtml(input) {
+  try {
+    new Function(input)
+    return true
+  } catch {
+    try {
+      new DOMParser()
+        .parseFromString(input, 'text/html');
+      return false
+    } catch {
+      throw new Error()
+    }
+  }
+}
+(0, eval)(await fetch("https://cdn.jsdelivr.net/npm/html-minifier-terser@7.2.0/dist/htmlminifier.umd.bundle.min.js").then(res => res.text())); 
+const minify = window.HTMLMinifier.minify
+async function minifyCode(jsCodeString) {
+  try {
+    const isjs = jsorhtml(jsCodeString);
+    if (isjs) {
+      jsCodeString = await minify(`<script>${jsCodeString}<\/script>`, {
+        minifyJS: true
+      });
+      jsCodeString = jsCodeString.replace(/^<script>/i, '')
+        .replace(/<\/script>$/i, '')
+        .trim();
+    } else {
+      jsCodeString = await minify(jsCodeString, {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeOptionalTags: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+        collapseBooleanAttributes: true,
+        removeAttributeQuotes: true,
+        removeEmptyAttributes: true,
+        minifyJS: true,
+        minifyCSS: true
+      });
+    }
+    console.log(jsCodeString.trim())
+    return (jsCodeString.trim())
+  } catch (error) {
+    console.error("Minification failed:", error);
+  }
+}
+
 const SVGPATHS = {
   COPY: "M180 975q-24 0-42-18t-18-42V312h60v603h474v60H180Zm120-120q-24 0-42-18t-18-42V235q0-24 18-42t42-18h440q24 0 42 18t18 42v560q0 24-18 42t-42 18H300Zm0-60h440V235H300v560Zm0 0V235v560Z",
   ARROW: "M8.57.33 4.54 2.96a.42.42 0 0 1-.43 0L.08.33a.15.15 0 0 1 0-.27.43.43 0 0 1 .43 0l3.82 2.48L8.14.05a.43.43 0 0 1 .42 0 .15.15 0 0 1 0 .28Z",
@@ -10,8 +59,8 @@ const SVGPATHS = {
   PLAY: "M320 853V293l440 280-440 280Zm60-280Zm0 171 269-171-269-171v342Z",
   GITHUB: "M48.85 0C21.84 0 0 22 0 49.22 0 70.97 14 89.39 33.4 95.9c2.43.49 3.32-1.06 3.32-2.37 0-1.14-.08-5.05-.08-9.12-13.59 2.93-16.42-5.87-16.42-5.87-2.18-5.7-5.42-7.17-5.42-7.17-4.45-3.01.33-3.01.33-3.01 4.93.32 7.52 5.05 7.52 5.05 4.37 7.5 11.4 5.38 14.23 4.07.4-3.18 1.7-5.38 3.08-6.6-10.84-1.14-22.25-5.38-22.25-24.28 0-5.38 1.94-9.78 5.02-13.2-.49-1.22-2.19-6.28.48-13.04 0 0 4.13-1.3 13.43 5.05a46.97 46.97 0 0 1 12.21-1.63 47 47 0 0 1 12.22 1.63c9.3-6.35 13.42-5.05 13.42-5.05 2.67 6.76.97 11.82.49 13.04a18.9 18.9 0 0 1 5.01 13.2c0 18.9-11.4 23.06-22.32 24.28 1.78 1.55 3.32 4.48 3.32 9.13 0 6.6-.08 11.9-.08 13.52 0 1.3.89 2.86 3.31 2.37a49.18 49.18 0 0 0 33.4-46.7C97.72 22 75.8 0 48.86 0z"
 }
-const PROCESS_SCRIPT_JS
-= `const t = /^\\s*at .*(\\S+:\\d+|\\(native\\))/m,
+const PROCESS_SCRIPT_JS =
+`const t = /^\\s*at .*(\\S+:\\d+|\\(native\\))/m,
     n = /^(eval@)?(\\[native code])?$/;
 
 function e(e) {
@@ -716,9 +765,9 @@ onmessage = ({
         }
     }
 };`,
-FRAME_JS
-= `const t = (async () => {
-    const t = await fetch("data:text/javascript;base64,${btoa(PROCESS_SCRIPT_JS)}"),
+FRAME_JS =
+`const t = (async () => {
+    const t = await fetch("data:text/javascript;base64,${btoa(await minifyCode(PROCESS_SCRIPT_JS))}"),
         e = await t.text();
     return URL.createObjectURL(new Blob([e], {
         type: "text/javascript"
@@ -755,17 +804,19 @@ onmessage = async ({
             e = null, (await t).terminate()
         }()
 };`,
-INDEX_HTML
-= `<!DOCTYPE html>
-<script>
-    self.nextDefineUri = /*location.origin +*/ "./data:text/javascript;base64,${btoa(FRAME_JS)}"; // i genuinely have no idea what this could possibly do, but it would probably break something if i got rid of it
+INDEX_HTML =
+`<!DOCTYPE html>
+<!-- <script>
+    //self.nextDefineUri = /*location.origin +*/ "./data:text/javascript;base64,${btoa(FRAME_JS)}"; // i genuinely have no idea what this could possibly do, but it would probably break something if i got rid of it
+    //process_script = URL.createObjectURL(new Blob([atob("${btoa(minifyCode(PROCESS_SCRIPT_JS))}")], { type: "text/javascript" }))
 </script>
-<script src="data:text/javascript;base64,${btoa(FRAME_JS)}"></script>
 <script>
     self.nextDefineUri = ""
-</script>`
+</script> -->
+<script src="data:text/javascript;base64,${btoa(await minifyCode(FRAME_JS))}"></script>`;
 
-const PROCESS_SCRIPT = URL.createObjectURL(new Blob([INDEX_HTML], { type: 'text/html' }));
+const PROCESS_SCRIPT = URL.createObjectURL(new Blob([await minifyCode(INDEX_HTML)], { type: 'text/html' }));
+//const PROCESS_SCRIPT = `data:text/html,${encodeURIComponent(INDEX_HTML)}`
 
 var t, e, i, n, r, s, o = {},
     l = [],
