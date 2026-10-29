@@ -44,7 +44,6 @@ async function minifyCode(jsCodeString) {
         minifyCSS: true
       });
     }
-    console.log(jsCodeString.trim())
     return (jsCodeString.trim())
   } catch (error) {
     console.error("Minification failed:", error);
