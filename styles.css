@@ -9,6 +9,16 @@
 }
 
 @media (min-width:1160px) {
+    :root {
+        --ui-side-margin: 10px
+    }
+
+    body,
+    html {
+        height: 100svh;
+        overflow: clip
+    }
+    
     .Apple_Grid {
         display: grid;
         gap: var(--ui-side-margin);
@@ -16,11 +26,31 @@
         margin: var(--ui-side-margin);
         overflow: hidden
     }
+    
+    .Section_Preview {
+        display: grid;
+        gap: var(--ui-side-margin);
+        grid-template: "preview" minmax(352px, 1fr) "output" minmax(113px, 311px) "simplify" auto /1fr;
+        overflow: hidden
+    }
+    
+    .Section_Preview > .Preview {
+        height: auto;
+        max-height: none
+    }
+    
+    #app {
+        overflow: hidden
+    }
 }
 
 @media (min-width:1820px) {
     .Apple_Grid {
         grid-template: "input preview-output preview-output" 1fr/1fr 1fr 1fr
+    }
+    
+    .Section_Preview {
+        grid-template: "preview output" 1fr "simplify simplify" auto/1fr 1fr
     }
 }
 
@@ -90,34 +120,12 @@
     overflow: hidden
 }
 
-@media (min-width:1160px) {
-    .Section_Preview {
-        display: grid;
-        gap: var(--ui-side-margin);
-        grid-template: "preview" minmax(352px, 1fr) "output" minmax(113px, 311px) "simplify" auto /1fr;
-        overflow: hidden
-    }
-}
-
-@media (min-width:1820px) {
-    .Section_Preview {
-        grid-template: "preview output" 1fr "simplify simplify" auto/1fr 1fr
-    }
-}
-
 .Section_Preview > .Preview {
     display: grid;
     height: 80svh;
     max-height: 650px;
     overflow: hidden;
     position: relative
-}
-
-@media (min-width:1160px) {
-    .Section_Preview > .Preview {
-        height: auto;
-        max-height: none
-    }
 }
 
 .Section_Preview > .Preview > .Demo {
@@ -136,6 +144,14 @@
         inset: var(--content-side-padding);
         top: auto;
         width: auto
+    }
+    .Section_Preview > .Preview > .Demo > .Demos > .Translate {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr
+    }
+    .Section_Preview > .Preview > .Demo > .Demos > .Translate>div {
+        margin-bottom: 0;
+        margin-right: var(--demo-box-size)
     }
 }
 
@@ -271,13 +287,6 @@
     top: 0
 }
 
-@media (prefers-color-scheme:dark) {
-    .Options > .Range > .Display > .TrackArea > .Knob {
-        background: var(--surface-2);
-        border-color: var(--gray-7)
-    }
-}
-
 .Select_Menu {
     overflow: clip;
     position: relative
@@ -342,26 +351,6 @@
     --content-side-padding: 30px
 }
 
-@media (min-width:1160px) {
-    :root {
-        --ui-side-margin: 10px
-    }
-}
-
-@media (prefers-color-scheme:dark) {
-    :root {
-        --text-1: var(--gray-1);
-        --text-2: var(--gray-3);
-        --surface-0: var(--gray-10);
-        --surface-1: var(--gray-9);
-        --surface-2: var(--gray-8);
-        --surface-3: var(--gray-11);
-        --surface-4: var(--gray-12);
-        --red-1: #f07575;
-        --border-color: var(--surface-2)
-    }
-}
-
 html {
     background: var(--surface-0);
     color: var(--text-1);
@@ -369,15 +358,6 @@ html {
     font-size: 16px;
     line-height: 1.5;
     overflow-y: scroll
-}
-
-@media (min-width:1160px) {
-
-    body,
-    html {
-        height: 100svh;
-        overflow: clip
-    }
 }
 
 body {
@@ -392,12 +372,6 @@ body {
 
 #app {
     grid-template-rows: auto 1fr
-}
-
-@media (min-width:1160px) {
-    #app {
-        overflow: hidden
-    }
 }
 
 a {
@@ -442,12 +416,6 @@ a:hover {
     overflow: hidden
 }
 
-@media (prefers-color-scheme:dark) {
-    .Section_Preview > .Preview > .Graph {
-        background: var(--surface-4)
-    }
-}
-
 .Section_Preview > .Preview > .Graph > .SVG {
     display: block;
     height: 100%;
@@ -484,6 +452,24 @@ a:hover {
 }
 
 @media (prefers-color-scheme:dark) {
+    :root {
+        --text-1: var(--gray-1);
+        --text-2: var(--gray-3);
+        --surface-0: var(--gray-10);
+        --surface-1: var(--gray-9);
+        --surface-2: var(--gray-8);
+        --surface-3: var(--gray-11);
+        --surface-4: var(--gray-12);
+        --red-1: #f07575;
+        --border-color: var(--surface-2)
+    }
+    .Options > .Range > .Display > .TrackArea > .Knob {
+        background: var(--surface-2);
+        border-color: var(--gray-7)
+    }
+    .Section_Preview > .Preview > .Graph {
+        background: var(--surface-4)
+    }
     .Section_Preview > .Preview > .Graph > .SVG > .Sublines {
         stroke: var(--surface-3);
         stroke-width: 2px
@@ -584,24 +570,8 @@ a:hover {
     padding: 0 20px
 }
 
-@media (max-width:1159px),
-(min-width:1820px) {
-    .Section_Preview > .Preview > .Demo > .Demos > .Translate {
-        grid-template-columns: none;
-        grid-template-rows: 1fr 1fr
-    }
-}
-
 .Section_Preview > .Preview > .Demo > .Demos > .Translate>div {
     margin-bottom: var(--demo-box-size)
-}
-
-@media (max-width:1159px),
-(min-width:1820px) {
-    .Section_Preview > .Preview > .Demo > .Demos > .Translate>div {
-        margin-bottom: 0;
-        margin-right: var(--demo-box-size)
-    }
 }
 
 ._unsupported-message_4dbgd_47 {
