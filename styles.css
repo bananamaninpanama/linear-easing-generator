@@ -4,12 +4,12 @@
 */
 
 
-._app-grid_1s7gt_1 {
+.Apple_Grid {
     margin-top: 20px
 }
 
 @media (min-width:1160px) {
-    ._app-grid_1s7gt_1 {
+    .Apple_Grid {
         display: grid;
         gap: var(--ui-side-margin);
         grid-template: "input preview-output" 1fr/1fr 1fr;
@@ -19,12 +19,12 @@
 }
 
 @media (min-width:1820px) {
-    ._app-grid_1s7gt_1 {
+    .Apple_Grid {
         grid-template: "input preview-output preview-output" 1fr/1fr 1fr 1fr
     }
 }
 
-._process-scripts-iframe_1s7gt_21 {
+.Process_Scripts {
     /*
     height: 0;
     left: 0;
@@ -36,7 +36,7 @@
     display: none;
 }
 
-._section-header_1s7gt_30 {
+.Section > .Header {
     align-items: center;
     background: var(--surface-1);
     display: grid;
@@ -48,31 +48,31 @@
     padding: 0 var(--content-side-padding)
 }
 
-._section-header-title_1s7gt_42 {
+.Section > .Header > .Title {
     display: grid;
     gap: .5rem;
     grid-auto-flow: row
 }
 
-._section-header-title_1s7gt_42 h2 {
+.Section > .Header > .Title h2 {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1;
     margin: 0
 }
 
-._section-header-title_1s7gt_42 p {
+.Section > .Header > .Title p {
     font-size: .9rem;
     line-height: 1;
     margin: 0
 }
 
-._select-label_1s7gt_61 {
+.Section > .Header > .Body {
     display: block
 }
 
-._label-text-end_1s7gt_66,
-._label-text_1s7gt_65 {
+.Section > .Header > .Foot,
+.Options > .Label {
     color: var(--text-2);
     display: block;
     font-size: .9rem;
@@ -80,18 +80,18 @@
     text-transform: uppercase
 }
 
-._label-text-end_1s7gt_66 {
+.Section > .Header > .Foot {
     text-align: right
 }
 
-._app-module_1s7gt_78 {
+.Section {
     display: grid;
     grid-template-rows: auto 1fr;
     overflow: hidden
 }
 
 @media (min-width:1160px) {
-    ._preview-output_1s7gt_84 {
+    .Section_Preview {
         display: grid;
         gap: var(--ui-side-margin);
         grid-template: "preview" minmax(352px, 1fr) "output" minmax(113px, 311px) "simplify" auto /1fr;
@@ -100,12 +100,12 @@
 }
 
 @media (min-width:1820px) {
-    ._preview-output_1s7gt_84 {
+    .Section_Preview {
         grid-template: "preview output" 1fr "simplify simplify" auto/1fr 1fr
     }
 }
 
-._preview-content_1s7gt_103 {
+.Section_Preview > .Preview {
     display: grid;
     height: 80svh;
     max-height: 650px;
@@ -114,13 +114,13 @@
 }
 
 @media (min-width:1160px) {
-    ._preview-content_1s7gt_103 {
+    .Section_Preview > .Preview {
         height: auto;
         max-height: none
     }
 }
 
-._animated-demos_1s7gt_116 {
+.Section_Preview > .Preview > .Demo {
     --size: 190px;
     display: grid;
     inset: var(--content-side-padding);
@@ -131,7 +131,7 @@
 
 @media (max-width:1159px),
 (min-width:1820px) {
-    ._animated-demos_1s7gt_116 {
+    .Section_Preview > .Preview > .Demo {
         height: var(--size);
         inset: var(--content-side-padding);
         top: auto;
@@ -139,7 +139,7 @@
     }
 }
 
-._input_1s7gt_132 {
+.Input {
     background: none;
     border: 1.5px solid var(--border-color);
     border-radius: 4px;
@@ -148,19 +148,19 @@
     padding: .2rem .8rem
 }
 
-._duration-input_1s7gt_141 {
+.Input > .Duration {
     -moz-appearance: textfield;
     text-align: right;
     width: 60px
 }
 
-._duration-input_1s7gt_141::-webkit-inner-spin-button,
-._duration-input_1s7gt_141::-webkit-outer-spin-button {
+.Input > .Duration::-webkit-inner-spin-button,
+.Input > .Duration::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0
 }
 
-._section-header-icon-button_1s7gt_153 {
+.Section > .Header > .Button {
     --size: 39px;
     all: unset;
     align-content: center;
@@ -175,18 +175,18 @@
     width: var(--size)
 }
 
-._section-header-icon-button_1s7gt_153:focus-visible {
+.Section > .Header > .Button:focus-visible {
     border-color: var(--text-1)
 }
 
-._section-header-icon-button_1s7gt_153>svg {
+.Section > .Header > .Button>svg {
     --size: 24px;
     fill: var(--icon-color);
     height: var(--size);
     width: var(--size)
 }
 
-._section-header-icon-button-text_1s7gt_180 {
+.Section > .Header > .Button > .Text {
     height: 0;
     opacity: 0;
     overflow: hidden;
@@ -195,13 +195,13 @@
 }
 
 @media (max-width:1159px) {
-    ._simplify-module_1s7gt_188 {
+    .Section.simple {
         bottom: 0;
         overflow: visible;
         position: sticky
     }
 
-    ._simplify-module_1s7gt_188:before {
+    .Section.simple:before {
         background: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, .013) 8.1%, rgba(0, 0, 0, .049) 15.5%, rgba(0, 0, 0, .104) 22.5%, rgba(0, 0, 0, .175) 29%, rgba(0, 0, 0, .259) 35.3%, rgba(0, 0, 0, .352) 41.2%, rgba(0, 0, 0, .45) 47.1%, rgba(0, 0, 0, .55) 52.9%, rgba(0, 0, 0, .648) 58.8%, rgba(0, 0, 0, .741) 64.7%, rgba(0, 0, 0, .825) 71%, rgba(0, 0, 0, .896) 77.5%, rgba(0, 0, 0, .951) 84.5%, rgba(0, 0, 0, .987) 91.9%, #000);
         bottom: 100%;
         content: "";
@@ -214,19 +214,19 @@
     }
 }
 
-._range-component_jwx9i_1 {
+.Options > .Range {
     display: grid
 }
 
-._range-component_jwx9i_1>* {
+.Options > .Range>* {
     grid-area: 1/1
 }
 
-._range-input_jwx9i_9 {
+.Options > .Range > .Real {
     opacity: 0
 }
 
-._fake-range_jwx9i_13 {
+.Options > .Range > .Display {
     --thumb-size: 20px;
     --pos: 0.5;
     contain: layout;
@@ -235,8 +235,8 @@
     position: relative
 }
 
-._active-line_jwx9i_22,
-._inactive-line_jwx9i_23 {
+.Options > .Range > .Display > .Filled,
+.Options > .Range > .Display > .Empty {
     background: var(--blue-1);
     border-radius: 100px;
     height: 3px;
@@ -247,19 +247,19 @@
     width: calc((100% - var(--thumb-size))*var(--pos) + var(--thumb-size)/2)
 }
 
-._inactive-line_jwx9i_23 {
+.Options > .Range > .Display > .Empty {
     background: var(--surface-0);
     margin-left: auto;
     width: calc((100% - var(--thumb-size))*(1 - var(--pos)) + var(--thumb-size)/2)
 }
 
-._track_jwx9i_44 {
+.Options > .Range > .Display > .TrackArea {
     inset: 0;
     position: absolute;
     right: var(--thumb-size)
 }
 
-._control_jwx9i_50 {
+.Options > .Range > .Display > .TrackArea > .Knob {
     aspect-ratio: 1/1;
     background: var(--surface-1);
     border: 1px solid var(--border-color);
@@ -272,18 +272,18 @@
 }
 
 @media (prefers-color-scheme:dark) {
-    ._control_jwx9i_50 {
+    .Options > .Range > .Display > .TrackArea > .Knob {
         background: var(--surface-2);
         border-color: var(--gray-7)
     }
 }
 
-._select_ss74s_1 {
+.Select_Menu {
     overflow: clip;
     position: relative
 }
 
-._select-current_ss74s_6 {
+.Select_Menu > .Current_Item {
     align-items: center;
     border: 1.5px solid var(--border-color);
     border-radius: 4px;
@@ -294,12 +294,12 @@
     pointer-events: none
 }
 
-._select-current_ss74s_6 svg {
+.Select_Menu > .Current_Item svg {
     stroke: var(--text-2);
     width: 100%
 }
 
-._real-select_ss74s_22 {
+.Select_Menu > .Dropdown {
     color-scheme: dark light;
     font-size: inherit;
     min-height: 100%;
@@ -409,7 +409,7 @@ a:hover {
     text-decoration: underline
 }
 
-._site-header_n4kfl_1 {
+.Apple_Header {
     align-items: center;
     background: var(--surface-1);
     display: grid;
@@ -420,35 +420,35 @@ a:hover {
     padding: 0 calc(var(--ui-side-margin) + var(--content-side-padding))
 }
 
-._site-title_n4kfl_12 {
+.Apple_Header > .Title {
     color: var(--accent);
     font-size: 1.7rem;
     margin: 0;
     padding: .9rem 0
 }
 
-._extended-title_n4kfl_19 {
+.Apple_Header > .Title > .Extndd {
     display: none
 }
 
 @media (min-width:480px) {
-    ._extended-title_n4kfl_19 {
+    .Apple_Header > .Title > .Extndd {
         display: inline
     }
 }
 
-._graph-component_kmc97_1 {
+.Section_Preview > .Preview > .Graph {
     background: var(--surface-3);
     overflow: hidden
 }
 
 @media (prefers-color-scheme:dark) {
-    ._graph-component_kmc97_1 {
+    .Section_Preview > .Preview > .Graph {
         background: var(--surface-4)
     }
 }
 
-._graph-svg_kmc97_10 {
+.Section_Preview > .Preview > .Graph > .SVG {
     display: block;
     height: 100%;
     overflow: visible;
@@ -456,45 +456,45 @@ a:hover {
     width: 100%
 }
 
-._full-path_kmc97_18,
-._optimized-path_kmc97_19 {
+.Section_Preview > .Preview > .Graph > .SVG > .Plot > .Orig,
+.Section_Preview > .Preview > .Graph > .SVG > .Plot > .Approx {
     fill: none;
     stroke-width: 1px;
     vector-effect: non-scaling-stroke
 }
 
-._full-path_kmc97_18 {
+.Section_Preview > .Preview > .Graph > .SVG > .Plot > .Orig {
     stroke: var(--accent-2)
 }
 
-._optimized-path_kmc97_19 {
+.Section_Preview > .Preview > .Graph > .SVG > .Plot > .Approx {
     stroke: var(--text-1)
 }
 
-._graph-axis_kmc97_33 {
+.Section_Preview > .Preview > .Graph > .SVG > .Axes {
     fill: none;
     stroke: var(--text-2);
     stroke-width: 2px
 }
 
-._graph-sublines_kmc97_39 {
+.Section_Preview > .Preview > .Graph > .SVG > .Sublines {
     fill: none;
     stroke: var(--surface-4);
     stroke-width: 1px
 }
 
 @media (prefers-color-scheme:dark) {
-    ._graph-sublines_kmc97_39 {
+    .Section_Preview > .Preview > .Graph > .SVG > .Sublines {
         stroke: var(--surface-3);
         stroke-width: 2px
     }
 }
 
-._points-svg_kmc97_50 {
+.Section_Preview > .Preview > .Graph > .SVG > .Plot {
     overflow: visible
 }
 
-._form_1jvvb_1 {
+.Options {
     align-items: center;
     background: var(--surface-1);
     display: grid;
@@ -504,24 +504,24 @@ a:hover {
     padding: 0 var(--content-side-padding)
 }
 
-._component_6pnp9_1 {
+.Codearea {
     background: var(--editor-background);
     display: grid;
     grid-template-rows: 1fr auto;
     overflow: hidden
 }
 
-._editor-container_6pnp9_8 {
+.Codearea > .EDITOR {
     display: grid;
     grid-template-columns: 100%;
     overflow: hidden
 }
 
-._editor-container_6pnp9_8 .cm-editor {
+.Codearea > .EDITOR .cm-editor {
     overflow: hidden
 }
 
-._error_6pnp9_18 {
+.Codearea > .ERROR {
     background: var(--error-background);
     border-top: 1px solid var(--error-border);
     color: var(--error-text);
@@ -533,7 +533,7 @@ a:hover {
     padding: 5px 8px
 }
 
-._error_6pnp9_18:before {
+.Codearea > .ERROR:before {
     --size: 15px;
     content: url(./c/error.svg);
     height: var(--size);
@@ -541,18 +541,18 @@ a:hover {
     width: var(--size)
 }
 
-._component_6pnp9_1 .cm-scroller {
+.Codearea .cm-scroller {
     font-size: .8rem;
     line-height: 1.5
 }
 
 @media (min-width:600px) {
-    ._component_6pnp9_1 .cm-scroller {
+    .Codearea .cm-scroller {
         font-size: .9rem
     }
 }
 
-._demos_4dbgd_1 {
+.Section_Preview > .Preview > .Demo > .Demos {
     --demo-box-size: 65px;
     align-items: center;
     background: var(--surface-1);
@@ -561,7 +561,7 @@ a:hover {
     position: relative
 }
 
-._demo-box_4dbgd_10 {
+.Section_Preview > .Preview > .Demo > .Demos > .Translate > .DEMOBOX {
     align-content: center;
     background-color: var(--text-2);
     border-radius: 1000px;
@@ -572,11 +572,11 @@ a:hover {
     width: var(--demo-box-size)
 }
 
-._unoptimized-demo-box_4dbgd_21 {
+.Section_Preview > .Preview > .Demo > .Demos > .Translate > .DEMOBOX.smooth {
     background-color: var(--accent-2)
 }
 
-._translate_4dbgd_25 {
+.Section_Preview > .Preview > .Demo > .Demos > .Translate {
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr 1fr;
@@ -586,19 +586,19 @@ a:hover {
 
 @media (max-width:1159px),
 (min-width:1820px) {
-    ._translate_4dbgd_25 {
+    .Section_Preview > .Preview > .Demo > .Demos > .Translate {
         grid-template-columns: none;
         grid-template-rows: 1fr 1fr
     }
 }
 
-._translate_4dbgd_25>div {
+.Section_Preview > .Preview > .Demo > .Demos > .Translate>div {
     margin-bottom: var(--demo-box-size)
 }
 
 @media (max-width:1159px),
 (min-width:1820px) {
-    ._translate_4dbgd_25>div {
+    .Section_Preview > .Preview > .Demo > .Demos > .Translate>div {
         margin-bottom: 0;
         margin-right: var(--demo-box-size)
     }
