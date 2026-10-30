@@ -42,7 +42,7 @@ function resolveFileUrl({ fileName }) {
 }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const dir = '.github/workflows/build';
+const dir = '.tmp/build';
 const staticPath = 'static/c/[name]-[hash][extname]';
 const jsPath = staticPath.replace('[extname]', '.js');
 
