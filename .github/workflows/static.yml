@@ -33,9 +33,8 @@ jobs:
       - name: Set up Node.js v20
         uses: actions/setup-node@v7
         with:
-          node-version: "20"
-      - name: install nvm
-        run: nvm install && nvm use
+          node-version-file: '.nvmrc'
+          cache: 'npm'
       - name: Install dependencies
         run: |
               if [ ! -d "node_modules" ]; then
