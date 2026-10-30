@@ -27,7 +27,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
-
       - name: Set up Node.js v20
         uses: actions/setup-node@v7
         with:
@@ -36,6 +35,11 @@ jobs:
         run: npm ci
       - name: Build project
         run: npm run build
+      - name: Commit build changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update build files"
+          file_pattern: .github/build/
   # Single deploy job since we're just deploying
   deploy:
     environment:
