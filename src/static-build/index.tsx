@@ -29,7 +29,7 @@ interface Output {
 const toOutput: Output = {
   'index.html': renderPage(<IndexPage />),
   '/process-script/index.html': renderPage(<ProcessScript />),
-  /*'manifest.json': JSON.stringify({
+  'manifest.json': JSON.stringify({
     name: 'linear() easing generator',
     short_name: 'linear()',
     start_url: '/',
@@ -53,6 +53,5 @@ const toOutput: Output = {
     description: 'Generate linear() easings from JavaScript and SVG',
     lang: 'en',
   }),
-*/
 };
 writeFiles(toOutput);
