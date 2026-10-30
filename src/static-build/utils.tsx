@@ -57,7 +57,7 @@ export function escapeStyleScriptContent(str: string): string {
     .replace(/<\/style/g, '<\\/style');
 }
 
-const productionURL = '#root';
+const productionURL = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 /**
  * Origin of the site, depending on the environment.
