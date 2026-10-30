@@ -29,9 +29,9 @@ interface Output {
 }
 
 const toOutput: Output = {
-  getrelativefile('index.html'): renderPage(<IndexPage />),
-  getrelativefile('/process-script/index.html'): renderPage(<ProcessScript />),
-  getrelativefile('manifest.json'): JSON.stringify({
+  'index.html': renderPage(<IndexPage />),
+  './process-script/index.html': renderPage(<ProcessScript />),
+  'manifest.json': JSON.stringify({
     name: 'linear() easing generator',
     short_name: 'linear()',
     start_url: './',
