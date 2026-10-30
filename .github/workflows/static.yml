@@ -34,11 +34,13 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: "20"
+      - name: install nvm
+        run: nvm install && nvm use
       - name: Install dependencies
         run: |
               if [ ! -d "node_modules" ]; then
                 echo "misisng nodes! installing..."
-              nvm install && nvm use && npm i
+              npm i
               else
                 echo "Nodes exist! skipping installation..."
               fi
