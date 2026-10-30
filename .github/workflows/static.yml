@@ -52,7 +52,8 @@ jobs:
           commit_message: "Auto-update build files"
           branch: mainForNETFLYBUILT
           commit_options: '--no-verify --signoff'
-          file_pattern: '*'
+          file_pattern: '.'
+          create_branch: true
           repository: .
           commit_user_name: My GitHub Actions Bot # defaults to "github-actions[bot]"
           commit_user_email: my-github-actions-bot@example.org # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
