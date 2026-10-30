@@ -57,7 +57,7 @@ export function escapeStyleScriptContent(str: string): string {
     .replace(/<\/style/g, '<\\/style');
 }
 
-const productionURL = 'https://linear-easing-generator.netlify.app';
+const productionURL = '#root';
 
 /**
  * Origin of the site, depending on the environment.
