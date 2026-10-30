@@ -58,10 +58,6 @@ jobs:
 
     # Optional. Skip internal call to `git checkout`
           skip_checkout: true
-
-    # Optional. Skip internal call to `git push`
-          skip_push: true
-          disable_pull_request_target_trigger_warning: false
   # Single deploy job since we're just deploying
   deploy:
     environment:
