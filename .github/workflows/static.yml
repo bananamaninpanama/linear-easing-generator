@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: "20"
       - name: Install dependencies
-        run: npm ci
+        run: npm i
       - name: Build project
         run: npm run build
       - name: copy files
@@ -51,18 +51,7 @@ jobs:
           commit_user_name: My GitHub Actions Bot # defaults to "github-actions[bot]"
           commit_user_email: my-github-actions-bot@example.org # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
           commit_author: Author <actions@github.com> # defaults to "username <numeric_id+username@users.noreply.github.com>", where "numeric_id" and "username" belong to the author of the commit that triggered the run
-          status_options: '--untracked-files=no'
-
           push_options: '--force'
-
-    # Optional. Disable dirty check and always try to create a commit and push
-          skip_dirty_check: true
-
-    # Optional. Skip internal call to `git fetch`
-          skip_fetch: true
-
-    # Optional. Skip internal call to `git checkout`
-          skip_checkout: true
   # Single deploy job since we're just deploying
   deploy:
     environment:
