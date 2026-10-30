@@ -69,10 +69,10 @@ jobs:
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - name: Switch to mainForNETFLYBUILD
+      - name: Switch to mainForNETFLYBUILT
         run: |
-          git fetch origin mainForNETFLYBUILD:mainForNETFLYBUILD
-          git checkout mainForNETFLYBUILD
+          git fetch origin mainForNETFLYBUILT:mainForNETFLYBUILT
+          git checkout mainForNETFLYBUILT
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
