@@ -14,8 +14,8 @@ import { h } from 'preact';
 
 import { renderPage, writeFiles } from './utils';
 import IndexPage from './pages/index';
-import * as socialIconURL from './assets/social-icon.png';
-import * as maskableIconURL from './assets/maskable-icon.png';
+import * as socialIconURL from 'img-url:static-build/assets/social-icon.png';
+import * as maskableIconURL from 'img-url:static-build/assets/social-icon.png';
 import { lookup as lookupMime } from 'mime-types';
 import ProcessScript from './pages/process-script';
 
@@ -29,7 +29,7 @@ interface Output {
 const toOutput: Output = {
   'index.html': renderPage(<IndexPage />),
   '/process-script/index.html': renderPage(<ProcessScript />),
-  'manifest.json': JSON.stringify({
+  /*'manifest.json': JSON.stringify({
     name: 'linear() easing generator',
     short_name: 'linear()',
     start_url: '/',
@@ -53,6 +53,6 @@ const toOutput: Output = {
     description: 'Generate linear() easings from JavaScript and SVG',
     lang: 'en',
   }),
+*/
 };
-
 writeFiles(toOutput);
