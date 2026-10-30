@@ -135,3 +135,7 @@ export function animateFrom(
 }
 
 export const hideFromPrerender = __PRERENDER__ ? 'visibility: hidden' : '';
+
+export function getrelativefile(otherfile: string) => {
+   return (path.relative(path.dirname(fileURLToPath(import.meta.url)), otherfile));
+}
