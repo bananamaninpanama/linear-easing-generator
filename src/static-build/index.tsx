@@ -14,8 +14,8 @@ import { h } from 'preact';
 
 import { renderPage, writeFiles } from './utils';
 import IndexPage from './pages/index';
-import * as socialIconURL from 'img-url:static-build/assets/social-icon.png';
-import * as maskableIconURL from 'img-url:static-build/assets/maskable-icon.png';
+//import * as socialIconURL from './static-build/assets/social-icon.png';
+//import * as maskableIconURL from './assets/maskable-icon.png';
 import { lookup as lookupMime } from 'mime-types';
 import ProcessScript from './pages/process-script';
 
