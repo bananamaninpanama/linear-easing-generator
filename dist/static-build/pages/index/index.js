@@ -7,7 +7,7 @@ var prerenderCss_ = require('../../../_virtual/prerender-css_.js');
 var index_tsx = require('../../../_virtual/index.tsx.js');
 var index_js = require('../../../_virtual/index.js.js');
 var favicon_png = require('../../../_virtual/favicon.png.js');
-var socialIcon_png = require('../../../_virtual/social-icon.png.js');
+var socialIcon_png = require('../../../_virtual/social-icon.png2.js');
 var utils = require('../../utils.js');
 var index = require('../../../shared/App/index.js');
 

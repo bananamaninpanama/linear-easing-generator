@@ -3,6 +3,8 @@
 var preact = require('preact');
 var utils = require('./utils.js');
 var index = require('./pages/index/index.js');
+var socialIcon_png = require('../_virtual/social-icon.png.js');
+var mimeTypes = require('mime-types');
 var index$1 = require('./pages/process-script/index.js');
 
 /**
@@ -17,33 +19,33 @@ var index$1 = require('./pages/process-script/index.js');
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const manifestSize = ({ width, height }) => `${width}x${height}`;
 const toOutput = {
     'index.html': utils.renderPage(preact.h(index.default, null)),
     '/process-script/index.html': utils.renderPage(preact.h(index$1.default, null)),
-    /*'manifest.json': JSON.stringify({
-      name: 'linear() easing generator',
-      short_name: 'linear()',
-      start_url: '/',
-      display: 'standalone',
-      orientation: 'any',
-      background_color: '#fff',
-      theme_color: '#009dff',
-      icons: [
-        {
-          src: maskableIconURL.default,
-          type: lookupMime(maskableIconURL.default),
-          sizes: manifestSize(maskableIconURL),
-          purpose: 'maskable',
-        },
-        {
-          src: socialIconURL.default,
-          type: lookupMime(socialIconURL.default),
-          sizes: manifestSize(socialIconURL),
-        },
-      ],
-      description: 'Generate linear() easings from JavaScript and SVG',
-      lang: 'en',
+    'manifest.json': JSON.stringify({
+        name: 'linear() easing generator',
+        short_name: 'linear()',
+        start_url: '/',
+        display: 'standalone',
+        orientation: 'any',
+        background_color: '#fff',
+        theme_color: '#009dff',
+        icons: [
+            {
+                src: socialIcon_png.default,
+                type: mimeTypes.lookup(socialIcon_png.default),
+                sizes: manifestSize(socialIcon_png),
+                purpose: 'maskable',
+            },
+            {
+                src: socialIcon_png.default,
+                type: mimeTypes.lookup(socialIcon_png.default),
+                sizes: manifestSize(socialIcon_png),
+            },
+        ],
+        description: 'Generate linear() easings from JavaScript and SVG',
+        lang: 'en',
     }),
-  */
 };
 utils.writeFiles(toOutput);
