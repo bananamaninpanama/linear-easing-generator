@@ -36,7 +36,7 @@ jobs:
       - name: Build project
         run: npm run build
       - name: copy files
-        run: cp -r .tmp/build/* ./dist/
+        run: mkdir -p ./dist && cp -r .tmp/build/* ./dist
       - name: Commit build changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
