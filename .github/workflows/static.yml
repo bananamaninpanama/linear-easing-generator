@@ -35,13 +35,15 @@ jobs:
         run: npm ci
       - name: Build project
         run: npm run build
+      - name: copy files
+        run: cp -r .tmp/build/* ./dist/
       - name: Commit build changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Auto-update build files"
           branch: mainForNetfly
           commit_options: '--no-verify --signoff'
-          file_pattern: '*.tmp/build/*'
+          file_pattern: './dist/*'
           repository: .
           commit_user_name: My GitHub Actions Bot # defaults to "github-actions[bot]"
           commit_user_email: my-github-actions-bot@example.org # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
@@ -74,7 +76,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: '.tmp/build'
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
