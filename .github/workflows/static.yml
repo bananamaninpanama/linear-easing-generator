@@ -44,8 +44,6 @@ jobs:
               fi
       - name: Build project
         run: npm run build
-      - name: copy files
-        run: mkdir -p ./dist && cp -r .tmp/build/* ./dist
       - name: Commit build changes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
@@ -75,7 +73,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload build repository
-          path: './dist'
+          path: './build'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
