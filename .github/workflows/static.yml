@@ -50,9 +50,9 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Auto-update build files"
-          branch: mainForNETFLY
+          branch: mainForNETFLYBUILT
           commit_options: '--no-verify --signoff'
-          file_pattern: './dist/** node_modules/**'
+          file_pattern: '*'
           repository: .
           commit_user_name: My GitHub Actions Bot # defaults to "github-actions[bot]"
           commit_user_email: my-github-actions-bot@example.org # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
