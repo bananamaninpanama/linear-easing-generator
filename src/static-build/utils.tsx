@@ -16,6 +16,9 @@ import { join as joinPath } from 'path';
 import render from 'preact-render-to-string';
 import { VNode } from 'preact';
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 export function renderPage(vnode: VNode) {
   return '<!DOCTYPE html>' + render(vnode);
 }
