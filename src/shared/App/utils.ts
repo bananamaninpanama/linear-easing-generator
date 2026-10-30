@@ -7,6 +7,9 @@ import {
 import { CodeType, State } from './types';
 import { useCallback, useEffect, useLayoutEffect } from 'preact/hooks';
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 export function doAbortable<R>(
   signal: AbortSignal,
   callback: (
