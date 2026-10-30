@@ -34,7 +34,6 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
-          cache: 'npm'
       - name: Install dependencies
         run: |
               if [ ! -d "node_modules" ]; then
