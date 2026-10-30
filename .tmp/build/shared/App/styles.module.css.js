@@ -1,0 +1,33 @@
+'use strict';
+
+const appGrid = "_app-grid_1s7gt_1";
+const sectionHeader = "_section-header_1s7gt_30";
+const sectionHeaderTitle = "_section-header-title_1s7gt_42";
+const selectLabel = "_select-label_1s7gt_61";
+const labelText = "_label-text_1s7gt_65";
+const labelTextEnd = "_label-text-end_1s7gt_66";
+const appModule = "_app-module_1s7gt_78";
+const previewOutput = "_preview-output_1s7gt_84";
+const previewContent = "_preview-content_1s7gt_103";
+const animatedDemos = "_animated-demos_1s7gt_116";
+const input = "_input_1s7gt_132";
+const durationInput = "_duration-input_1s7gt_141";
+const sectionHeaderIconButton = "_section-header-icon-button_1s7gt_153";
+const sectionHeaderIconButtonText = "_section-header-icon-button-text_1s7gt_180";
+const simplifyModule = "_simplify-module_1s7gt_188";
+
+exports.animatedDemos = animatedDemos;
+exports.appGrid = appGrid;
+exports.appModule = appModule;
+exports.durationInput = durationInput;
+exports.input = input;
+exports.labelText = labelText;
+exports.labelTextEnd = labelTextEnd;
+exports.previewContent = previewContent;
+exports.previewOutput = previewOutput;
+exports.sectionHeader = sectionHeader;
+exports.sectionHeaderIconButton = sectionHeaderIconButton;
+exports.sectionHeaderIconButtonText = sectionHeaderIconButtonText;
+exports.sectionHeaderTitle = sectionHeaderTitle;
+exports.selectLabel = selectLabel;
+exports.simplifyModule = simplifyModule;
