@@ -35,18 +35,24 @@ jobs:
         with:
           node-version: "20"
       - name: Install dependencies
-        run: npm i
+        run: |
+              if [ ! -d "node_modules" ]; then
+                echo "misisng nodes! installing..."
+              npm i
+              else
+                echo "Nodes exist! skipping installation..."
+              fi
       - name: Build project
         run: npm run build
       - name: copy files
         run: mkdir -p ./dist && cp -r .tmp/build/* ./dist
       - name: Commit build changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Auto-update build files"
           branch: mainForNETFLY
           commit_options: '--no-verify --signoff'
-          file_pattern: './dist/*'
+          file_pattern: './dist/ ./node_modules/*'
           repository: .
           commit_user_name: My GitHub Actions Bot # defaults to "github-actions[bot]"
           commit_user_email: my-github-actions-bot@example.org # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
@@ -67,7 +73,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
+          # Upload build repository
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
