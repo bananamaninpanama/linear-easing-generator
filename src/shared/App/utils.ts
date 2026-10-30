@@ -139,6 +139,11 @@ export function animateFrom(
 
 export const hideFromPrerender = __PRERENDER__ ? 'visibility: hidden' : '';
 
-export function getrelativefile(otherfile: string) {
+(globalThis as any).getrelativefile = (otherfile: string) => {
    return (path.relative(path.dirname(fileURLToPath(import.meta.url)), otherfile));
+}
+export {};
+
+declare global {
+  var getrelativefile: (otherfile: string) => void;
 }
