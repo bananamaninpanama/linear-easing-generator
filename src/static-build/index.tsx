@@ -19,6 +19,8 @@ import * as maskableIconURL from 'img-url:static-build/assets/social-icon.png';
 import { lookup as lookupMime } from 'mime-types';
 import ProcessScript from './pages/process-script';
 
+import { getrelativefile } from 'shared/App/utils.ts'
+
 const manifestSize = ({ width, height }: { width: number; height: number }) =>
   `${width}x${height}`;
 
@@ -27,25 +29,25 @@ interface Output {
 }
 
 const toOutput: Output = {
-  'index.html': renderPage(<IndexPage />),
-  '/process-script/index.html': renderPage(<ProcessScript />),
-  'manifest.json': JSON.stringify({
+  getrelativefile('index.html'): renderPage(<IndexPage />),
+  getrelativefile('/process-script/index.html'): renderPage(<ProcessScript />),
+  getrelativefile('manifest.json'): JSON.stringify({
     name: 'linear() easing generator',
     short_name: 'linear()',
-    start_url: '/',
+    start_url: './',
     display: 'standalone',
     orientation: 'any',
     background_color: '#fff',
     theme_color: '#009dff',
     icons: [
       {
-        src: maskableIconURL.default,
+        src: getrelativefile(maskableIconURL.default),
         type: lookupMime(maskableIconURL.default),
         sizes: manifestSize(maskableIconURL),
         purpose: 'maskable',
       },
       {
-        src: socialIconURL.default,
+        src: getrelativefile(socialIconURL.default),
         type: lookupMime(socialIconURL.default),
         sizes: manifestSize(socialIconURL),
       },
