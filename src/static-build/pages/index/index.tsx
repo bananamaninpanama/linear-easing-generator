@@ -55,7 +55,7 @@ const Index: FunctionalComponent<Props> = () => (
       {imports.map((preload) => (
         <link rel="preload" href={preload} as="script" />
       ))}
-      <script src={url} type="module" />
+      <script src={"." + url} type="module" />
       <script src={analyticsUrl} async />
     </head>
     <body>
