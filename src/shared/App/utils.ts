@@ -7,9 +7,6 @@ import {
 import { CodeType, State } from './types';
 import { useCallback, useEffect, useLayoutEffect } from 'preact/hooks';
 
-import path from 'path';
-import { fileURLToPath } from 'url';
-
 export function doAbortable<R>(
   signal: AbortSignal,
   callback: (
@@ -138,12 +135,3 @@ export function animateFrom(
 }
 
 export const hideFromPrerender = __PRERENDER__ ? 'visibility: hidden' : '';
-
-(globalThis as any).getrelativefile = (otherfile: string) => {
-   return (path.relative(path.dirname(fileURLToPath(import.meta.url)), otherfile));
-}
-export {};
-
-declare global {
-  var getrelativefile: (otherfile: string) => void;
-}
