@@ -19,8 +19,6 @@ import * as maskableIconURL from 'img-url:static-build/assets/social-icon.png';
 import { lookup as lookupMime } from 'mime-types';
 import ProcessScript from './pages/process-script';
 
-import { getrelativefile } from '../shared/pathgetter.js'
-
 const manifestSize = ({ width, height }: { width: number; height: number }) =>
   `${width}x${height}`;
 
@@ -41,13 +39,13 @@ const toOutput: Output = {
     theme_color: '#009dff',
     icons: [
       {
-        src: getrelativefile(maskableIconURL.default),
+        src: maskableIconURL.default,
         type: lookupMime(maskableIconURL.default),
         sizes: manifestSize(maskableIconURL),
         purpose: 'maskable',
       },
       {
-        src: getrelativefile(socialIconURL.default),
+        src: socialIconURL.default,
         type: lookupMime(socialIconURL.default),
         sizes: manifestSize(socialIconURL),
       },
