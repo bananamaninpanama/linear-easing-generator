@@ -1,6 +1,7 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-export function getrelativefile(current, to) {
-  let rel = path.relative(current, to).replace(/\\/g, '/');
+export function getrelativefile(to) {
+  let rel = path.relative(path.dirname(fileURLToPath(import.meta.url)), to).replace(/\\/g, '/');
   return rel.startsWith('.') ? rel : `./${rel}`;
 }
