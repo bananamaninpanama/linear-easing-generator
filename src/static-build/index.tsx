@@ -20,7 +20,6 @@ import { lookup as lookupMime } from 'mime-types';
 import ProcessScript from './pages/process-script';
 
 import { getrelativefile } from 'src/shared/pathgetter.js'
-const directorycurrent = path.dirname(fileURLToPath(import.meta.url))
 
 const manifestSize = ({ width, height }: { width: number; height: number }) =>
   `${width}x${height}`;
@@ -42,15 +41,15 @@ const toOutput: Output = {
     theme_color: '#009dff',
     icons: [
       {
-        src: getrelativefile(directorycurrent, maskableIconURL.default),
+        src: getrelativefile(maskableIconURL.default),
         type: lookupMime(maskableIconURL.default),
         sizes: manifestSize(maskableIconURL),
         purpose: 'maskable',
       },
       {
-        src: getrelativefile(directorycurrent, socialIconURL.default),
-        type: lookupMime(directorycurrent, socialIconURL.default),
-        sizes: manifestSize(directorycurrent, socialIconURL),
+        src: getrelativefile(socialIconURL.default),
+        type: lookupMime(socialIconURL.default),
+        sizes: manifestSize(socialIconURL),
       },
     ],
     description: 'Generate linear() easings from JavaScript and SVG',
