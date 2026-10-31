@@ -1,1 +1,1 @@
-declare module '../shared/pathgetter.js';
+declare module '*pathgetter.js';
