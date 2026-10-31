@@ -8,7 +8,7 @@ interface Props {}
 const ProcessScript: FunctionalComponent<Props> = () => (
   <>
     {imports.map((preload) => (
-      <link rel="preload" href={preload} as="script" />
+      <link rel="preload" href={"." + preload} as="script" />
     ))}
     <script
       dangerouslySetInnerHTML={{
