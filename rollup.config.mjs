@@ -16,7 +16,7 @@ import { fileURLToPath } from 'url';
 import { deleteAsync } from 'del';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import realTerser from '@rollup/plugin-terser'; // const disableTerser = false; const terser = disableTerser  ? () => ({ name: 'fake-terser' })  : realTerser;
+import terser from '@rollup/plugin-terser';
 import replace from '@rollup/plugin-replace';
 
 import simpleTS from './lib/simple-ts.mjs';
