@@ -19,7 +19,7 @@ import * as maskableIconURL from 'img-url:static-build/assets/social-icon.png';
 import { lookup as lookupMime } from 'mime-types';
 import ProcessScript from './pages/process-script';
 
-import { getrelativefile } from 'src/shared/pathgetter.js'
+import { getrelativefile } from '../shared/pathgetter.js'
 
 const manifestSize = ({ width, height }: { width: number; height: number }) =>
   `${width}x${height}`;
