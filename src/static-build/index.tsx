@@ -17,7 +17,7 @@ import IndexPage from './pages/index';
 import * as socialIconURL from 'img-url:static-build/assets/social-icon.png';
 import * as maskableIconURL from 'img-url:static-build/assets/social-icon.png';
 import { lookup as lookupMime } from 'mime-types';
-import ProcessScript from './pages/process-script';
+import { ProcessScript } from './pages/process-script';
 
 import getrelativefile from '../shared/pathgetter.js'
 
