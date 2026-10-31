@@ -30,7 +30,7 @@ const Index: FunctionalComponent<Props> = () => (
       <title>Linear easing generator</title>
       <meta name="theme-color" content="#009dff" />
       <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
-      <link rel="icon" type="image/png" href={faviconURL} />
+      <link rel="icon" type="image/png" href={"." + faviconURL} />
       <meta name="twitter:card" content="summary" />
       <meta
         property="twitter:image"
@@ -44,7 +44,7 @@ const Index: FunctionalComponent<Props> = () => (
         property="og:description"
         content="Generate linear() easings from JavaScript and SVG"
       />
-      <link rel="manifest" href="/manifest.json" />
+      <link rel="manifest" href="./manifest.json" />
       {
         <style
           dangerouslySetInnerHTML={{
@@ -53,7 +53,7 @@ const Index: FunctionalComponent<Props> = () => (
         />
       }
       {imports.map((preload) => (
-        <link rel="preload" href={preload} as="script" />
+        <link rel="preload" href={"." + preload} as="script" />
       ))}
       <script src={"." + url} type="module" />
       <script src={analyticsUrl} async />
