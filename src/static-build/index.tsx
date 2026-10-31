@@ -39,15 +39,15 @@ const toOutput: Output = {
     theme_color: '#009dff',
     icons: [
       {
-        src: maskableIconURL.default,
-        type: lookupMime(maskableIconURL.default),
-        sizes: manifestSize(maskableIconURL),
+        src: '.' + maskableIconURL.default,
+        type: lookupMime('.' + maskableIconURL.default),
+        sizes: manifestSize('.' + maskableIconURL),
         purpose: 'maskable',
       },
       {
-        src: socialIconURL.default,
-        type: lookupMime(socialIconURL.default),
-        sizes: manifestSize(socialIconURL),
+        src: '.' + socialIconURL.default,
+        type: lookupMime('.' + socialIconURL.default),
+        sizes: manifestSize('.' + socialIconURL),
       },
     ],
     description: 'Generate linear() easings from JavaScript and SVG',
