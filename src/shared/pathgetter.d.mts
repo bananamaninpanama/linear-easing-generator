@@ -1,1 +1,1 @@
-export function pathgetter(input: any): any;
+export function pathgetter(to: any): any;
