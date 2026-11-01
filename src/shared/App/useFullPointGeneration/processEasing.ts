@@ -11,7 +11,7 @@ const [iframe, loaded] = (() => {
   if (__PRERENDER__) return [null, null];
   const iframe = document.createElement('iframe');
   iframe.setAttribute('sandbox', 'allow-scripts');
-  iframe.src = '/process-script/';
+  iframe.src = './process-script/';
   iframe.className = styles.processScriptsIframe;
   const loaded = new Promise<void>(
     (resolve) => (iframe.onload = () => resolve()),
