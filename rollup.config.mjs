@@ -43,7 +43,7 @@ function resolveFileUrl({ fileName }) {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dir = '.tmp/build';
-const staticPath = 'static/c/[name]-[hash][extname]';
+const staticPath = 'static/c/[name][extname]';
 const jsPath = staticPath.replace('[extname]', '.js');
 
 function jsFileName(chunkInfo) {
