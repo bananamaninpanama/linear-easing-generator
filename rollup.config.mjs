@@ -73,7 +73,7 @@ export default async function ({ watch }) {
       'src/workers',
     ]),
     urlPlugin(),
-    cssPlugin(),
+    //cssPlugin(),
   ];
 
   return {
