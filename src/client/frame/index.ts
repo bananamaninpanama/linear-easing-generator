@@ -1,5 +1,3 @@
-//TEST
-
 import workerURL from 'entry-url:workers/process-script';
 import { ProcessScriptData, PostMessageError } from 'shared-types/index';
 
