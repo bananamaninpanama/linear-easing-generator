@@ -54,7 +54,14 @@ function jsFileName(chunkInfo) {
   const name = parsedPath.dir.split(/\\|\//).slice(-1);
   return jsPath.replace('[name]', name);
 }
-
+function test(chunkInfo) {
+  if (!chunkInfo.facadeModuleId) return jsPath;
+  const parsedPath = path.parse(chunkInfo.facadeModuleId);
+  if (parsedPath.name !== 'index') return jsPath;
+  // Come up with a better name than 'index'
+  const name = parsedPath.dir.split(/\\|\//).slice(-1);
+  return jsPath.replace('[name]', name).replace('static/c/','static/process-scripts/');
+}
 export default async function ({ watch }) {
   await deleteAsync('.tmp/build');
 
@@ -124,7 +131,7 @@ export default async function ({ watch }) {
         {
           dir,
           format: 'esm',
-          chunkFileNames: jsFileName.replace('static/c/','static/process-scripts/'),
+          chunkFileNames: test,
           entryFileNames: jsFileName,
         },
         resolveFileUrl,
