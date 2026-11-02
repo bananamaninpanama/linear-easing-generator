@@ -32,7 +32,7 @@ async function sortMediaQueries() {
       postcssSortMediaQueries({
         sort: 'desktop-first'
       })
-    ]).process(cssString, { from: undefined });
+    ]).process(initialCss, { from: undefined });
     return(result.css);
   } catch (error) {
     console.error('Error processing CSS:', error);
