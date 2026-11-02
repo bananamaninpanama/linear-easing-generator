@@ -22,15 +22,16 @@ import socialImageURL from 'url:static-build/assets/social-icon.png';
 import { escapeStyleScriptContent, siteOrigin } from 'static-build/utils';
 import App from 'shared/App';
 
-console.log('INITIAL CSS:')
-console.log(initialCss);
-console.log('ESCAPED CSS:')
-console.log(escapeStyleScriptContent(initialCss));
 
 import postcss from 'postcss';
 import SortMediaQueries from 'postcss-sort-media-queries';
-const testCSS: string = (postcss([SortMediaQueries()])
-    .process(initialCss, { from: undefined })).css
+function SMQ(PreCSS: string = '') {
+  const PostCSS = postcss([SortMediaQueries()]).process(PreCSS).css
+  return PostCSS
+}
+
+const P_initialCss: string = SMQ(initialCss)
+
 
 interface Props {}
 
@@ -58,7 +59,7 @@ const Index: FunctionalComponent<Props> = () => (
       {
         <style
           dangerouslySetInnerHTML={{
-            __html: escapeStyleScriptContent(testCSS),
+            __html: escapeStyleScriptContent(P_initialCss),
           }}
         />
       }
