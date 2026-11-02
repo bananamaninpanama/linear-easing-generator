@@ -43,12 +43,12 @@ function resolveFileUrl({ fileName }) {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dir = '.tmp/build';
-const defaultPath = 'static/c/images/'
+const defaultPath = 'static/c/'
 const staticPath = defaultPath + '[name][extname]';
 const jsPath = staticPath.replace('[extname]', '.js');
 
 function jsFileName(chunkInfo) {
-  const jspathtest = jsPath.replace(defaultPath,'static/c/Script/')
+  const jspathtest = jsPath.replace(defaultPath,'static/')
   if (!chunkInfo.facadeModuleId) return jspathtest;
   const parsedPath = path.parse(chunkInfo.facadeModuleId);
   if (parsedPath.name !== 'index') return jspathtest;
@@ -57,7 +57,7 @@ function jsFileName(chunkInfo) {
   return jspathtest.replace('[name]', name);
 }
 function test(chunkInfo) {
-  const jspathtest = jsPath.replace(defaultPath,'static/c/Process-Script/')
+  const jspathtest = jsPath.replace(defaultPath,'static/c/')
   if (!chunkInfo.facadeModuleId) return jspathtest;
   const parsedPath = path.parse(chunkInfo.facadeModuleId);
   if (parsedPath.name !== 'index') return jspathtest;
