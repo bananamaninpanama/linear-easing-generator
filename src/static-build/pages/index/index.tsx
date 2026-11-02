@@ -26,19 +26,19 @@ import App from 'shared/App';
 import postcss from 'postcss';
 import postcssSortMediaQueries from 'postcss-sort-media-queries';
 
-async function sortMediaQueries() {
+async function sortMediaQueries(PreCss) {
   try {
-    const result = await postcss([
+    const PostCss = await postcss([
       postcssSortMediaQueries({
         sort: 'desktop-first'
       })
-    ]).process(initialCss, { from: undefined });
-    return(result.css);
+    ]).process(PreCss, { from: undefined });
+    return(PostCss.css);
   } catch (error) {
     console.error('Error processing CSS:', error);
   }
 }
-
+const testCSS = sortMediaQueries(initialCss)
 
 
 interface Props {}
@@ -67,7 +67,7 @@ const Index: FunctionalComponent<Props> = () => (
       {
         <style
           dangerouslySetInnerHTML={{
-            __html: escapeStyleScriptContent(await sortMediaQueries()),
+            __html: escapeStyleScriptContent(testCSS),
           }}
         />
       }
