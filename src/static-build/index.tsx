@@ -13,7 +13,7 @@
 import { h } from 'preact';
 
 import { renderPage, writeFiles } from './utils';
-import IndexPage from './pages/index';
+import IndexPage, { STYLESHEET } from './pages/index';
 import * as socialIconURL from 'img-url:static-build/assets/social-icon.png';
 import * as maskableIconURL from 'img-url:static-build/assets/social-icon.png';
 import { lookup as lookupMime } from 'mime-types';
@@ -29,6 +29,7 @@ interface Output {
 const toOutput: Output = {
   './index.html': renderPage(<IndexPage />),
   './process-script/index.html': renderPage(<ProcessScript />),
+  './styles.css': STYLESHEET
   './manifest.json': JSON.stringify({
     name: 'linear() easing generator',
     short_name: 'linear()',
