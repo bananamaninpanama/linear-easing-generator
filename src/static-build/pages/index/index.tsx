@@ -25,7 +25,7 @@ import App from 'shared/App';
 
 import postcss from 'postcss';
 import postcssSortMediaQueries from 'postcss-sort-media-queries';
-
+let testCSS
 async function sortMediaQueries(PreCss: string) {
   try {
     const PostCss = await postcss([
@@ -33,12 +33,12 @@ async function sortMediaQueries(PreCss: string) {
         sort: 'desktop-first'
       })
     ]).process(PreCss, { from: undefined });
-    return(PostCss.css);
+    testCSS = PostCss.css;
   } catch (error) {
     console.error('Error processing CSS:', error);
   }
 }
-const testCSS = (async () => { await sortMediaQueries(initialCss) })
+await sortMediaQueries(initialCss);
 
 
 interface Props {}
