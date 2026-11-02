@@ -4,7 +4,8 @@ import { ProcessScriptData, PostMessageError } from 'shared-types/index';
 // Null origins can't create workers from an external resource,
 // so we need to fetch the script and create a blob URL.
 const localWorkerURL = (async () => {
-  const response = await fetch(".." + workerURL);
+  //const response = await fetch(".." + workerURL);
+  const response = await fetch("./process-script.js");
   const text = await response.text();
   return URL.createObjectURL(new Blob([text], { type: 'text/javascript' }));
 })();
