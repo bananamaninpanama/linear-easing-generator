@@ -22,9 +22,11 @@ import socialImageURL from 'url:static-build/assets/social-icon.png';
 import { escapeStyleScriptContent, siteOrigin } from 'static-build/utils';
 import App from 'shared/App';
 
+console.log('INITIAL CSS:')
 console.log(initialCss);
-console.log(initialCss);
-console.log(initialCss);
+console.log('ESCAPED CSS:')
+console.log(escapeStyleScriptContent(initialCss));
+
 import postcss from 'postcss';
 import postcssSortMediaQueries from 'postcss-sort-media-queries';
 let testCSS: string
