@@ -67,7 +67,7 @@ const Index: FunctionalComponent<Props> = () => (
       {
         <style
           dangerouslySetInnerHTML={{
-            __html: escapeStyleScriptContent(sortMediaQueries()),
+            __html: escapeStyleScriptContent(await sortMediaQueries()),
           }}
         />
       }
