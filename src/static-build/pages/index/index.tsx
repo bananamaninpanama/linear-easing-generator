@@ -58,11 +58,7 @@ const Index: FunctionalComponent<Props> = () => (
       />
       <link rel="manifest" href="./manifest.json" />
       {
-        <style
-          dangerouslySetInnerHTML={{
-            __html: escapeStyleScriptContent(P_initialCss),
-          }}
-        />
+        <link rel="stylesheet" href="./styles.css" />
       }
       {imports.map((preload) => (
         <link rel="preload" href={"." + preload} as="script" />
@@ -79,3 +75,5 @@ const Index: FunctionalComponent<Props> = () => (
 );
 
 export default Index;
+//export const STYLESHEET = dangerouslySetInnerHTML={{ __html: escapeStyleScriptContent(P_initialCss), }}
+export const STYLESHEET = escapeStyleScriptContent(P_initialCss)
