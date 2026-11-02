@@ -30,7 +30,8 @@ function SMQ(PreCSS: string = '') {
   return PostCSS
 }
 
-const P_initialCss: string = SMQ(initialCss)
+//const P_initialCss: string = SMQ(initialCss)
+const P_initialCss: string = initialCss
 
 
 interface Props {}
