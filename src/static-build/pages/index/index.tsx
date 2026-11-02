@@ -31,9 +31,7 @@ import postcss from 'postcss';
 import postcssSortMediaQueries from 'postcss-sort-media-queries';
 let testCSS: string
 postcss([
-    postcssSortMediaQueries({
-      sort: 'desktop-first'
-    })
+    SortMediaQueries()
   ]).process(escapeStyleScriptContent(initialCss), { from: undefined })
     .then(result => {
       testCSS = result.css;
