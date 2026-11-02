@@ -22,6 +22,25 @@ import socialImageURL from 'url:static-build/assets/social-icon.png';
 import { escapeStyleScriptContent, siteOrigin } from 'static-build/utils';
 import App from 'shared/App';
 
+
+import postcss from 'postcss';
+import postcssSortMediaQueries from 'postcss-sort-media-queries';
+
+async function sortMediaQueries() {
+  try {
+    const result = await postcss([
+      postcssSortMediaQueries({
+        sort: 'desktop-first'
+      })
+    ]).process(cssString, { from: undefined });
+    return(result.css);
+  } catch (error) {
+    console.error('Error processing CSS:', error);
+  }
+}
+
+
+
 interface Props {}
 
 const Index: FunctionalComponent<Props> = () => (
@@ -48,7 +67,7 @@ const Index: FunctionalComponent<Props> = () => (
       {
         <style
           dangerouslySetInnerHTML={{
-            __html: escapeStyleScriptContent(initialCss),
+            __html: escapeStyleScriptContent(sortMediaQueries()),
           }}
         />
       }
