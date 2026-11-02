@@ -38,7 +38,7 @@ async function sortMediaQueries(PreCss: string) {
     console.error('Error processing CSS:', error);
   }
 }
-sortMediaQueries(initialCss).then((PostCss: string) => {
+sortMediaQueries(initialCss).then((PostCss: string = '') => {
   testCSS = PostCss;
 });
 
