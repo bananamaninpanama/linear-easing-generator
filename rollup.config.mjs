@@ -60,7 +60,7 @@ function test(chunkInfo) {
   if (parsedPath.name !== 'index') return jsPath;
   // Come up with a better name than 'index'
   const name = parsedPath.dir.split(/\\|\//).slice(-1);
-  return jsPath.replace('[name]', name).replace('static/c/','static/process-scripts/');
+  return jsPath.replace('[name]', name).replace('static/c/','static/process-script/');
 }
 export default async function ({ watch }) {
   await deleteAsync('.tmp/build');
