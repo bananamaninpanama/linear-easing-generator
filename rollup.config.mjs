@@ -43,7 +43,7 @@ function resolveFileUrl({ fileName }) {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dir = '.tmp/build';
-const staticPath = 'static/cww/[name][extname]';
+const staticPath = 'static/c/[name][extname]';
 const jsPath = staticPath.replace('[extname]', '.js');
 
 function jsFileName(chunkInfo) {
@@ -124,7 +124,7 @@ export default async function ({ watch }) {
         {
           dir,
           format: 'esm',
-          chunkFileNames: jsFileName,
+          chunkFileNames: jsFileName.replace('static/c/','static/process-scripts/'),
           entryFileNames: jsFileName,
         },
         resolveFileUrl,
