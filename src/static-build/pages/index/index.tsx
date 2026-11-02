@@ -32,7 +32,7 @@ postcss([
     })
   ]).process(initialCss, { from: undefined })
     .then(result => {
-      testCSS = result;
+      testCSS = result.css;
     });
 
 
