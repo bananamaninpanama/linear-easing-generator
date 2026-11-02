@@ -38,7 +38,7 @@ async function sortMediaQueries(PreCss: string) {
     console.error('Error processing CSS:', error);
   }
 }
-const testCSS = (async () => { await sortMediaQueries(initialCss) }
+const testCSS = (async () => { await sortMediaQueries(initialCss) })
 
 
 interface Props {}
