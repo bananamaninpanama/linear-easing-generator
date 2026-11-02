@@ -43,24 +43,27 @@ function resolveFileUrl({ fileName }) {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dir = '.tmp/build';
-const staticPath = 'static/c/[name][extname]';
+const defaultPath = 'static/c/images/'
+const staticPath = defaultPath + '[name][extname]';
 const jsPath = staticPath.replace('[extname]', '.js');
 
 function jsFileName(chunkInfo) {
-  if (!chunkInfo.facadeModuleId) return jsPath;
+  const jspathtest = jsPath.replace(defaultPath,'static/c/Script/')
+  if (!chunkInfo.facadeModuleId) return jspathtest;
   const parsedPath = path.parse(chunkInfo.facadeModuleId);
-  if (parsedPath.name !== 'index') return jsPath;
+  if (parsedPath.name !== 'index') return jspathtest;
   // Come up with a better name than 'index'
   const name = parsedPath.dir.split(/\\|\//).slice(-1);
-  return jsPath.replace('[name]', name);
+  return jspathtest.replace('[name]', name);
 }
 function test(chunkInfo) {
-  if (!chunkInfo.facadeModuleId) return jsPath;
+  const jspathtest = jsPath.replace(defaultPath,'static/c/Process-Script/')
+  if (!chunkInfo.facadeModuleId) return jspathtest;
   const parsedPath = path.parse(chunkInfo.facadeModuleId);
-  if (parsedPath.name !== 'index') return jsPath;
+  if (parsedPath.name !== 'index') return jspathtest;
   // Come up with a better name than 'index'
   const name = parsedPath.dir.split(/\\|\//).slice(-1);
-  return jsPath.replace('[name]', name).replace('static/c/','static/process-script/');
+  return jspathtest.replace('[name]', name);
 }
 export default async function ({ watch }) {
   await deleteAsync('.tmp/build');
