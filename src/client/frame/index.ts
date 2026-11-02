@@ -1,4 +1,5 @@
-import workerURL from 'entry-url:workers/process-script';
+//import workerURL from 'entry-url:workers/process-script';
+var workerURL = new URL('../../workers/process-script', import.meta.url);
 import { ProcessScriptData, PostMessageError } from 'shared-types/index';
 
 // Null origins can't create workers from an external resource,
