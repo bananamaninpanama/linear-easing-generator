@@ -28,14 +28,13 @@ console.log('ESCAPED CSS:')
 console.log(escapeStyleScriptContent(initialCss));
 
 import postcss from 'postcss';
-import postcssSortMediaQueries from 'postcss-sort-media-queries';
+import SortMediaQueries from 'postcss-sort-media-queries';
 let testCSS: string
 postcss([
     SortMediaQueries()
-  ]).process(escapeStyleScriptContent(initialCss), { from: undefined })
+  ]).process(initialCss, { from: undefined })
     .then(result => {
       testCSS = result.css;
-    });
 
 
 interface Props {}
@@ -64,7 +63,7 @@ const Index: FunctionalComponent<Props> = () => (
       {
         <style
           dangerouslySetInnerHTML={{
-            __html: testCSS,
+            __html: escapeStyleScriptContent(testCSS),
           }}
         />
       }
@@ -83,3 +82,6 @@ const Index: FunctionalComponent<Props> = () => (
 );
 
 export default Index;
+
+          
+    });
