@@ -30,7 +30,7 @@ postcss([
     postcssSortMediaQueries({
       sort: 'desktop-first'
     })
-  ]).process(initialCss, { from: undefined })
+  ]).process(escapeStyleScriptContent(initialCss), { from: undefined })
     .then(result => {
       testCSS = result.css;
     });
@@ -62,7 +62,7 @@ const Index: FunctionalComponent<Props> = () => (
       {
         <style
           dangerouslySetInnerHTML={{
-            __html: escapeStyleScriptContent(testCSS),
+            __html: testCSS,
           }}
         />
       }
