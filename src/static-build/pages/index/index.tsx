@@ -33,12 +33,14 @@ async function sortMediaQueries(PreCss: string) {
         sort: 'desktop-first'
       })
     ]).process(PreCss, { from: undefined });
-    testCSS = PostCss.css;
+    return(PostCss.css);
   } catch (error) {
     console.error('Error processing CSS:', error);
   }
 }
-await sortMediaQueries(initialCss);
+sortMediaQueries(initialCss).then((PostCss: string) => {
+  testCSS = PostCss;
+});
 
 
 interface Props {}
