@@ -25,7 +25,7 @@ import App from 'shared/App';
 
 import postcss from 'postcss';
 import postcssSortMediaQueries from 'postcss-sort-media-queries';
-let testCSS
+let testCSS: string
 async function sortMediaQueries(PreCss: string) {
   try {
     const PostCss = await postcss([
