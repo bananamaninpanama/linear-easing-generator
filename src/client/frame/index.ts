@@ -1,5 +1,5 @@
 import workerURL from 'entry-url:workers/process-script';
-//import { ProcessScriptData, PostMessageError } from 'shared-types/index';
+import { ProcessScriptData, PostMessageError } from 'shared-types/index';
 
 // Null origins can't create workers from an external resource,
 // so we need to fetch the script and create a blob URL.
