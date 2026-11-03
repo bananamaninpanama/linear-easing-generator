@@ -28,7 +28,7 @@
   gap: 5px;
 
   &::before {
-    content: url('images/error.svg');
+    content: url('.' './images/error.svg');
     --size: 15px;
     width: var(--size);
     height: var(--size);
