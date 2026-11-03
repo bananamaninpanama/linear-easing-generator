@@ -64,7 +64,7 @@ const Index: FunctionalComponent<Props> = () => (
         <link rel="preload" href={"." + preload} as="script" />
       ))}
       <script src={"." + url} type="module" />
-      <script src={analyticsUrl} async />
+      <!-- <script src={"." + analyticsUrl} async /> -->
     </head>
     <body>
       <div id="app">
