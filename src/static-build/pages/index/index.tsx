@@ -64,7 +64,7 @@ const Index: FunctionalComponent<Props> = () => (
         <link rel="preload" href={"." + preload} as="script" />
       ))}
       <script src={"." + url} type="module" />
-      <!-- <script src={"." + analyticsUrl} async /> -->
+     
     </head>
     <body>
       <div id="app">
@@ -72,7 +72,7 @@ const Index: FunctionalComponent<Props> = () => (
       </div>
     </body>
   </html>
-);
+); //  <script src={"." + analyticsUrl} async />
 
 export default Index;
 //export const STYLESHEET = dangerouslySetInnerHTML={{ __html: escapeStyleScriptContent(P_initialCss), }}
