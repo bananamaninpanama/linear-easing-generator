@@ -24,6 +24,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      commitmodules: ${{ steps.nodecheck.outputs.commitmodules }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
