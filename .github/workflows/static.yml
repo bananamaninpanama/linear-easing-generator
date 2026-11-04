@@ -81,7 +81,7 @@ jobs:
           name: nodemodules
           path: ./node_modules
       - name: REVERT CHANGESOH MY GOD WHY DIDNT IT ADD IT TO A DIRECTORY
-        run: git revert HEAD~1 --no-commit
+        run: git revert HEAD~3 --no-commit
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
