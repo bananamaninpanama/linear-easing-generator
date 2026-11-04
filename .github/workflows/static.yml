@@ -78,7 +78,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: nodemodules
-          path: .
+          path: ./node_modules
+      - name: REVERT CHANGESOH MY GOD WHY DIDNT IT ADD IT TO A DIRECTORY
+        run: git revert HEAD
       - name: Commit Nodes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
