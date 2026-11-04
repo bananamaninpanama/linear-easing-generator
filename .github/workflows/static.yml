@@ -48,7 +48,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: BuiltFiles
-          path: .
+          path: |
+            ./build
+            ./.tmp
+            ./node_modules
   Commit:
     runs-on: ubuntu-latest
     needs: build
