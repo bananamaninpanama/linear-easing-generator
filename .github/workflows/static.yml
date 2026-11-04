@@ -40,11 +40,9 @@ jobs:
               npm i
               if [ -n "$(git status --porcelain node_modules/)" ]; then
                 echo "commiting misisng nodes"
-                echo "::set-output name=run_job::true"
                 echo "commitmodules=true" >> $GITHUB_OUTPUT
               else
                 echo "Nodes exist! skipping commit..."
-                echo "::set-output name=run_job::false"
                 echo "commitmodules=false" >> $GITHUB_OUTPUT
               fi
       - name: Build project
@@ -66,7 +64,7 @@ jobs:
             ./.tmp
   Commit-Nodes:
     needs: build
-    if: needs.build.outputs.run_job == 'true'
+    if: needs.build.outputs.commitmodules == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
