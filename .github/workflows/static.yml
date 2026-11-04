@@ -99,7 +99,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload build repository
-          path: './built'
+          path: './build'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
