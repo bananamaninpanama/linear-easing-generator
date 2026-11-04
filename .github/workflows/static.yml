@@ -85,7 +85,7 @@ jobs:
           commit_message: "Auto-update build files"
           branch: mainForNETFLY
           commit_options: '--no-verify --signoff'
-          file_pattern: './node_modules'
+          file_pattern: 'node_modules/*'
           repository: .
           commit_user_name: My GitHub Actions Bot # defaults to "github-actions[bot]"
           commit_user_email: my-github-actions-bot@example.org # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
@@ -118,6 +118,9 @@ jobs:
           commit_user_email: my-github-actions-bot@example.org # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
           commit_author: Author <actions@github.com> # defaults to "username <numeric_id+username@users.noreply.github.com>", where "numeric_id" and "username" belong to the author of the commit that triggered the run
           push_options: '--force'
+          after_commit_hook: |
+            git clean -fdx
+            git checkout
   # Single deploy job since we're just deploying
   deploy:
     environment:
