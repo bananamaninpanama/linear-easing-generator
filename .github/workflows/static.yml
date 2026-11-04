@@ -80,20 +80,6 @@ jobs:
         with:
           name: nodemodules
           path: ./node_modules
-      - name: REVERT CHANGESOH MY GOD WHY DIDNT IT ADD IT TO A DIRECTORY
-        run: git revert HEAD~3 --no-commit
-      - name: Commit and Push Changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "REVERT IT REVERT IT OH MY GOD"
-          branch: mainForNETFLY
-          commit_options: '--no-verify --signoff'
-          file_pattern: '.'
-          repository: .
-          commit_user_name: My GitHub Actions Bot # defaults to "github-actions[bot]"
-          commit_user_email: my-github-actions-bot@example.org # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
-          commit_author: Author <actions@github.com> # defaults to "username <numeric_id+username@users.noreply.github.com>", where "numeric_id" and "username" belong to the author of the commit that triggered the run
-          push_options: '--force'
       - name: Commit Nodes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
