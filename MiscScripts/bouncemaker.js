@@ -1,7 +1,8 @@
 //this is just a basic function that gives you an svg path with that many bounces
 function f(x) {
     return Array.from({ length: x })
-        .reduce((acc, valUSELESS, n) => {
+        .reduce((acc, valUSELESS, idx) => {
+            const n = idx + 1
             const [
         dxONE,
         dyONE,
